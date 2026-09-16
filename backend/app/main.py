@@ -25,7 +25,7 @@ app.include_router(auth_router, prefix="/api")
 app.include_router(tasks_router, prefix="/api")
 
 
-@app.get("/")
+@app.get("/api")
 def root():
     return {
         "message": "Gestor de Agenda API funcionando"
