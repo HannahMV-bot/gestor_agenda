@@ -1,8 +1,3 @@
-Sí, de hecho **te recomiendo hacerlo más resumido**. Para un proyecto académico, el README no necesita ser tan largo.
-
-Puedes reemplazarlo por este:
-
-````markdown
 # 📅 Gestor de Agenda
 
 Aplicación multiplataforma desarrollada con **Flutter** para la gestión y organización de tareas personales.
@@ -184,16 +179,4 @@ http://127.0.0.1:8000/docs
 **Gestor de Agenda**
 Desarrollado con Flutter, FastAPI y MongoDB.
 
-````
 
-**Este sí te recomiendo subirlo**: es más limpio, profesional y suficiente para explicar tu proyecto sin llenar el repositorio de información innecesaria.
-
-Después de guardarlo:
-
-```powershell
-git add README.md
-git commit -m "docs: actualizar README"
-git push
-````
-
-Y seguimos con **la integración de GitFlow y las evidencias**.
