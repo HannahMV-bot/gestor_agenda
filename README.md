@@ -1,40 +1,33 @@
 # 📅 Gestor de Agenda
 
-Aplicación multiplataforma desarrollada con **Flutter** para la gestión y organización de tareas personales.
+Aplicación multiplataforma desarrollada con **Flutter** para gestionar y organizar tareas personales.
 
-El sistema permite registrar usuarios, iniciar sesión y administrar tareas mediante una API REST desarrollada con **FastAPI** y una base de datos **MongoDB**.
+El sistema utiliza una **API REST con FastAPI**, autenticación mediante **JWT** y **MongoDB** como base de datos.
 
 ---
 
 ## 🎯 Objetivo
 
-Desarrollar una aplicación que permita a los usuarios gestionar y organizar sus tareas de forma sencilla mediante una interfaz moderna y adaptable a dispositivos móviles y escritorio.
+Facilitar la gestión de tareas mediante una aplicación moderna, adaptable a dispositivos móviles y web.
 
 ---
 
 ## 🚀 Funcionalidades
 
 ### 🔐 Autenticación
-
 - Registro de usuarios.
 - Inicio de sesión.
 - Autenticación mediante JWT.
 - Recuperación de contraseña.
-- Manejo de sesión.
-- Cierre de sesión.
+- Manejo y cierre de sesión.
 
 ### 📅 Gestión de tareas
-
-- Crear tareas.
-- Consultar tareas.
-- Editar tareas.
-- Eliminar tareas.
-- Buscar tareas.
-- Filtrar por estado y prioridad.
-- Visualizar estadísticas.
+- Crear, consultar, editar y eliminar tareas.
+- Búsqueda de tareas.
+- Filtros por estado y prioridad.
+- Visualización de estadísticas.
 
 ### 👤 Perfil
-
 - Visualización de información del usuario.
 - Configuración de notificaciones.
 - Modo oscuro.
@@ -46,24 +39,22 @@ Desarrollar una aplicación que permita a los usuarios gestionar y organizar sus
 
 | Tecnología | Uso |
 |---|---|
-| Flutter | Frontend |
-| Dart | Lenguaje |
-| FastAPI | Backend / API REST |
+| Flutter | Aplicación frontend |
+| Dart | Lenguaje de programación |
+| FastAPI | API REST |
 | Python | Backend |
 | MongoDB | Base de datos |
 | JWT | Autenticación |
-| Git | Control de versiones |
-| GitHub | Repositorio |
+| Git / GitHub | Control de versiones |
 
 ---
 
 ## 🏗️ Arquitectura
 
-El proyecto utiliza **Clean Architecture**, separando las responsabilidades en diferentes capas:
+El proyecto implementa **Clean Architecture**, separando la aplicación en las capas:
 
 ```text
 lib/
-
 ├── core/
 │   ├── constants/
 │   ├── errors/
@@ -87,8 +78,6 @@ lib/
 
 ## 🔗 API REST
 
-La aplicación Flutter se comunica con el backend mediante una API REST desarrollada con FastAPI.
-
 | Método | Endpoint | Función |
 |---|---|---|
 | POST | `/auth/register` | Registrar usuario |
@@ -102,7 +91,7 @@ La aplicación Flutter se comunica con el backend mediante una API REST desarrol
 
 ## 🗄️ Base de datos
 
-La aplicación utiliza **MongoDB** como sistema de gestión de base de datos.
+**MongoDB**
 
 Base de datos:
 
@@ -117,13 +106,11 @@ users
 tasks
 ```
 
-Las tareas están asociadas al usuario mediante el campo `user_id`.
+Las tareas se relacionan con el usuario autenticado mediante `user_id`.
 
 ---
 
 ## 🔄 GitFlow
-
-El proyecto utiliza una estructura basada en GitFlow:
 
 ```text
 main
@@ -134,75 +121,45 @@ main
     └── feature/profile
 ```
 
-### Ramas principales
-
-- `main`: contiene la versión estable del proyecto.
-- `develop`: rama utilizada para la integración del desarrollo.
-- `feature/auth`: desarrollo de autenticación.
-- `feature/agenda`: desarrollo de la gestión de tareas.
-- `feature/profile`: desarrollo del perfil y manejo de sesión.
+- `main`: versión estable.
+- `develop`: integración del desarrollo.
+- `feature/auth`: autenticación.
+- `feature/agenda`: gestión de tareas.
+- `feature/profile`: perfil y sesión.
 
 ---
 
-## ▶️ Ejecución del proyecto
+## ▶️ Ejecución local
 
-### 📱 Flutter
-
-Instalar las dependencias:
+### Flutter
 
 ```bash
 flutter pub get
-```
-
-Ejecutar la aplicación en navegador:
-
-```bash
 flutter run -d chrome
 ```
 
-Para ejecutar en Android:
+Para Android:
 
 ```bash
 flutter run
 ```
 
----
-
-### ⚙️ FastAPI
-
-Ingresar a la carpeta del backend:
+### FastAPI
 
 ```powershell
 cd backend
-```
-
-Activar el entorno virtual:
-
-```powershell
 .\venv\Scripts\Activate.ps1
-```
-
-Instalar las dependencias:
-
-```powershell
 pip install -r requirements.txt
-```
-
-Ejecutar el servidor:
-
-```powershell
 uvicorn app.main:app --reload
 ```
 
-La API estará disponible localmente en:
+API local:
 
 ```text
 http://127.0.0.1:8000
 ```
 
-### 📖 Swagger
-
-La documentación interactiva de la API se encuentra en:
+Swagger local:
 
 ```text
 http://127.0.0.1:8000/docs
@@ -212,23 +169,35 @@ http://127.0.0.1:8000/docs
 
 ## 🌐 Enlaces del proyecto
 
+### 🖥️ Aplicación Web
+
+https://web-ruby-omega-96.vercel.app
+
+### 🚀 API REST
+
+https://gestor-agenda-five.vercel.app/
+
+### 📖 Swagger
+
+https://gestor-agenda-five.vercel.app/docs
+
 ### 📂 Repositorio GitHub
 
 https://github.com/HannahMV-bot/gestor_agenda.git
 
-### 🚀 API desplegada
+---
 
-https://gestor-agenda-five.vercel.app/
+## ☁️ Despliegue
 
-### 📖 Documentación Swagger
+- **Frontend:** Flutter Web desplegado en Vercel.
+- **Backend:** FastAPI desplegado en Vercel.
+- **Base de datos:** MongoDB Atlas.
 
-https://gestor-agenda-five.vercel.app/docs
+La aplicación web consume la API REST desplegada para realizar las operaciones de autenticación y gestión de tareas.
 
 ---
 
 ## 📱 Plataformas
-
-La aplicación está preparada para ejecutarse en:
 
 - 🖥️ Web
 - 📱 Android
@@ -237,45 +206,48 @@ La aplicación está preparada para ejecutarse en:
 
 ## 🔐 Seguridad
 
-El proyecto implementa diferentes mecanismos de seguridad:
-
-- Autenticación mediante **JWT**.
-- Contraseñas protegidas mediante **hash**.
-- Validación de usuarios mediante autenticación.
-- Protección de los endpoints de tareas mediante token.
-- Las tareas se relacionan con el usuario autenticado.
-- Variables sensibles almacenadas mediante variables de entorno.
-- El archivo `.env` está excluido del repositorio mediante `.gitignore`.
+- Autenticación mediante JWT.
+- Contraseñas almacenadas mediante hash.
+- Protección de endpoints mediante token.
+- Variables sensibles mediante `.env`.
+- `.env` excluido del repositorio mediante `.gitignore`.
 
 ---
 
-## 📁 Estructura general del proyecto
+## 🧪 Validación
+
+Se verificó el funcionamiento de:
+
+- Registro e inicio de sesión.
+- Autenticación JWT.
+- Creación de tareas.
+- Consulta de tareas.
+- Edición de tareas.
+- Eliminación de tareas.
+- Comunicación Flutter–API.
+- Conexión con MongoDB Atlas.
+- Endpoints mediante Swagger.
+- Análisis del código con `flutter analyze`.
+
+---
+
+## 📁 Estructura general
 
 ```text
 gestor_agenda/
-│
 ├── android/
-│
 ├── backend/
 │   ├── app/
-│   │   ├── models/
-│   │   ├── schemas/
-│   │   ├── routes/
-│   │   ├── services/
-│   │   └── tasks/
-│   │
 │   ├── .env
 │   ├── .gitignore
 │   ├── main.py
 │   └── requirements.txt
-│
 ├── lib/
 │   ├── core/
 │   ├── features/
 │   │   ├── auth/
 │   │   └── agenda/
 │   └── main.dart
-│
 ├── test/
 ├── web/
 ├── .gitignore
@@ -287,79 +259,8 @@ gestor_agenda/
 
 ---
 
-## 🧪 Validación del proyecto
-
-Durante el desarrollo se realizaron pruebas de:
-
-- Registro de usuarios.
-- Inicio de sesión.
-- Generación y validación de tokens JWT.
-- Creación de tareas.
-- Consulta de tareas.
-- Actualización de tareas.
-- Eliminación de tareas.
-- Validación de autenticación.
-- Conexión con MongoDB Atlas.
-- Comunicación entre Flutter y la API REST.
-- Pruebas de la API mediante Swagger.
-- Verificación de código mediante `flutter analyze`.
-
----
-
-## ☁️ Despliegue
-
-El backend de la aplicación se encuentra desplegado en **Vercel**.
-
-La aplicación utiliza una API REST para realizar las operaciones de autenticación y gestión de tareas.
-
-### Backend
-
-```text
-https://gestor-agenda-five.vercel.app/
-```
-
-### Swagger
-
-```text
-https://gestor-agenda-five.vercel.app/docs
-```
-
-### Repositorio
-
-```text
-https://github.com/HannahMV-bot/gestor_agenda.git
-```
-
----
-
-## 🔧 Variables de entorno
-
-Para ejecutar el backend localmente se deben configurar las variables de entorno necesarias en el archivo `.env`.
-
-Ejemplo:
-
-```env
-MONGODB_URI=tu_cadena_de_conexion
-SECRET_KEY=tu_clave_secreta
-```
-
-> **Importante:** No se deben publicar credenciales, contraseñas ni claves secretas en el repositorio.
-
----
-
 ## 👩‍💻 Proyecto académico
 
-### 📅 Gestor de Agenda
+**Gestor de Agenda**
 
-Proyecto académico desarrollado utilizando:
-
-- **Flutter**
-- **Dart**
-- **FastAPI**
-- **Python**
-- **MongoDB**
-- **JWT**
-- **Git**
-- **GitHub**
-
-El proyecto tiene como finalidad permitir la gestión y organización de tareas personales mediante una aplicación multiplataforma conectada a una API REST.
+Proyecto desarrollado con **Flutter, FastAPI, Python y MongoDB**, orientado a la gestión de tareas personales mediante una aplicación multiplataforma y una API REST.
