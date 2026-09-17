@@ -1,7 +1,8 @@
 fastapi
 uvicorn[standard]
-pymongo
+pymongo>=4.11,<5
 python-dotenv
 pydantic[email]
 bcrypt
 python-jose[cryptography]
+certifi
