@@ -171,7 +171,7 @@ http://127.0.0.1:8000/docs
 
 ### 🖥️ Aplicación Web
 
-https://web-ruby-omega-96.vercel.app
+https://web-ruby-omega-96.vercel.app/
 
 ### 🚀 API REST
 
