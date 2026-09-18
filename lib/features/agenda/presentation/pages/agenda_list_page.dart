@@ -209,16 +209,16 @@ class _AgendaListPageState extends State<AgendaListPage> {
   // ============================================================
 
   Future<void> _openEditTask(Task task) async {
-    final taskData = <String, dynamic>{
-      'task_id': task.id,
-      'user_id': task.userId,
-      'title': task.title,
-      'description': task.description,
-      'date': task.date,
-      'time': task.time,
-      'status': task.status,
-      'priority': task.priority,
-    };
+final taskData = <String, dynamic>{
+  'id': task.id,
+  'user_id': task.userId,
+  'title': task.title,
+  'description': task.description,
+  'date': task.date,
+  'time': task.time,
+  'status': task.status,
+  'priority': task.priority,
+};
 
     final result = await Navigator.push(
       context,

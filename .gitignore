@@ -50,3 +50,5 @@ app.*.map.json
 # Backend secrets
 .env
 backend/.env
+.vercel
+.env*
